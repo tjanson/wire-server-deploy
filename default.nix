@@ -26,7 +26,7 @@ in {
       pkgs.awscli
       pkgs.gnumake
       pkgs.gnupg
-      pkgs.kubectl_1_14_10
+      pkgs.kubectl
       pkgs.kubernetes-helm
       pkgs.moreutils
       pkgs.pythonForAnsible
@@ -34,6 +34,9 @@ in {
       pkgs.sops
       pkgs.terraform_0_13
       pkgs.yq
+
+      pkgs.mirror-apt
+      pkgs.generate-gpg1-key
     ];
   };
 }
