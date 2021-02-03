@@ -1,5 +1,18 @@
 variable "subdomains" {
   type = list(string)
+  default = [
+    "nginz-https",
+    "nginz-ssl",
+    "webapp",
+    "assets",
+    "account",
+    "teams"
+  ]
+}
+
+variable "create_spf_record" {
+  type = bool
+  default = true
 }
 
 module "aws-dns-records" {
@@ -12,5 +25,5 @@ module "aws-dns-records" {
   # root_domain = var.root_domain
   zone_fqdn = var.root_domain
   ips = [ for node in local.kubernetes_nodes: node.ipaddress ]
-  create_spf_record = true
+  create_spf_record = var.create_spf_record
 }

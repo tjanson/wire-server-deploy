@@ -18,14 +18,6 @@ variable "domain" {
 variable "subdomains" {
   type        = list(string)
   description = "list of sub-domains that will be registered under the given root domain"
-  default = [
-    "nginz-https",
-    "nginz-ssl",
-    "webapp",
-    "assets",
-    "account",
-    "teams"
-  ]
 }
 
 variable "inject_addition_subtree" {
